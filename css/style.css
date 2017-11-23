@@ -1,0 +1,111 @@
+
+@import url(https://fonts.googleapis.com/css?family=Rock+Salt|Libre+Barcode+128+Text);
+
+body{
+	font-size : 12pt;
+	background-color: #eee; 
+}
+
+ul, ol {list-style:none;}
+
+#wrapper div#header {
+	padding : 1.5em;
+	padding-left : 10%;
+	padding-right : 10%;
+	text-align : left;
+	background: white;
+	border-bottom: 10px solid #2dbfe8;
+}
+
+#wrapper div#header div.title {
+	font-size : 7em;
+	font-family: 'Libre Barcode 128 Text'; 
+	padding-left: 4%;
+}
+
+#wrapper div#content {
+    padding-left : 2em;
+    padding-top : 2em;
+    padding-right: 2em;
+}
+
+#wrapper div#content div#col_1 {
+	text-align : left;
+}
+
+#wrapper div#content div#col_1 div.entry {
+	margin-top : 2em;
+	margin-bottom : 4em;
+	margin-left : 3em;
+	padding-bottom : 2em;
+}
+
+#wrapper div#content div#col_1 div.entry div.title {
+	font-family:'Rock Salt', Arial, Helvetica, sans-serif;
+	font-size:1.35em;
+	color:#555;
+	font-weight:normal;
+	line-height : 1.4em;
+	padding-bottom : 10px;
+}
+
+#wrapper div#content div#col_1 div.entry div.body {
+	font-size : 1.25em;
+	margin-top : 1em;
+}
+
+#wrapper div#content div#col_1 div.entry div.link a {
+	font-size : 1.25em;
+	margin-left : 70%;
+	color : #ff722e;
+}
+
+
+#wrapper div#content div#col_2 {}
+
+#wrapper div#content div#col_2 div.pic img {
+	width: 220px;
+	border : 10px solid #2dbfe8; 
+	padding: 5px;
+    border-radius: 100%;
+	background-color: white;
+}
+
+#wrapper div#content div#col_2 ul.contact {}
+#wrapper div#content div#col_2 ul.contact li {
+	padding: 7px;
+}
+
+#wrapper div#content div#col_2 ul.contact li a{
+	text-align : left;
+	text-decoration : none;
+	color : #fff;
+	padding:5px 5px 5px 55px;
+	font-family:'Rock Salt', Arial, Helvetica, sans-serif;
+	font-size:1em;
+	color:#868686;
+	font-weight:normal;
+	background-size: contain;
+	display: block;
+}
+
+#wrapper div#content div#col_2 ul.contact li a.linkedin {
+	background: url(../img/linkedin.png) no-repeat 0 0;
+	background-size: contain;
+}
+
+#wrapper div#content div#col_2 ul.contact li a.twitter {
+	background: url(../img/twitter.png) no-repeat 0 0;
+	background-size: contain;
+}
+
+#wrapper div#content div#col_2 ul.contact li a.github {
+	background: url(../img/github.png) no-repeat 0 0;
+	background-size: contain;
+}
+
+#wrapper div#content div#col_2 ul.contact li a.home {
+	background: url(../img/home.png) no-repeat 0 0;
+	background-size: contain;
+}
+
