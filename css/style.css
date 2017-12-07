@@ -1,5 +1,5 @@
 
-@import url(https://fonts.googleapis.com/css?family=Rock+Salt|Libre+Barcode+128+Text);
+@import url(https://fonts.googleapis.com/css?family=Rock+Salt|Libre+Barcode+128+Text|Ubuntu);
 
 body{
 	font-size : 12pt;
@@ -71,6 +71,16 @@ ul, ol {list-style:none;}
 	background-color: white;
 }
 
+#wrapper div#content div#col_2 div.disclaimer {
+	border: 1px solid red;
+	font-family:'Ubuntu', Arial, Helvetica, sans-serif;
+	font-size:1em;
+	color:#555;
+	font-weight:normal;
+	line-height : 1em;
+	padding : 10px;
+}
+
 #wrapper div#content div#col_2 ul.contact {}
 #wrapper div#content div#col_2 ul.contact li {
 	padding: 7px;
@@ -108,4 +118,3 @@ ul, ol {list-style:none;}
 	background: url(../img/home.png) no-repeat 0 0;
 	background-size: contain;
 }
-
