@@ -16,21 +16,21 @@ body{
 #wrapper #content {
     margin-left : auto;
     margin-right : auto;
-    width : 80%;
+    width : 90%;
 }
 
 #wrapper #content #col_1 {
     float: left;
-    width:60%;
+    width:73%;
 }
 
 #wrapper #content #col_2 { 
-    width:30%;
-    margin-left : 70%;
-    margin-top : -15%;
+    width:25%;
+    margin-left : 75%;
+/*    margin-top : -12.5%; */
 }
 
 #wrapper #footer{
-    width : 30%;
-    margin-left : 70%;
+    width : 25%;
+    margin-left : 75%;
 }

@@ -3,9 +3,54 @@ layout: default
 title: Hi, I'm Matt
 ---
 
-<div class='entry'>
+{% assign post = site.posts.first %}
+<div class='section_header'>Latest</div>
+<div id="post">
+
     <div class='title'>
-        Coming soon.
+        <a href="{{ post.url }}">{{ post.title }}</a>
+    </div>
+    <div class='date'>
+        {{ post.date | date_to_string }}
+    </div> 
+    <div id='body'>
+        {{ post.content }}
     </div>
 </div>
+<!-- 
+<div class='section_header'>Recent Posts</div>
+<div class='posts'>
+    <ul class='posts'>
+    {% for post in site.posts offset:1 limit:3 %}
+        <li class='post'>
+            <div class='title'>
+                <a href="{{ post.url }}">{{ post.title }}</a>
+            </div>
+            <div class='date'>
+                {{ post.date | date_to_string }}
+            </div> 
+            <div class='excerpt'>
+                {{ post.excerpt | remove: '<p>' | remove: '</p>' }}
+            </div>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
 
+<div class='section_header'>Older Posts</div>
+<div class='posts'>
+    <ul class='posts'>
+    {% for post in site.posts offset:4 %}
+        <li class='post'>
+            <span class='title'>
+                <a href="{{ post.url }}">{{ post.title }}</a>
+            </span>
+            <span class='date'>
+                {{ post.date | date_to_string }}
+            </span> 
+        </li>
+ 
+    {% endfor %}
+    </ul>
+</div>
+-->
