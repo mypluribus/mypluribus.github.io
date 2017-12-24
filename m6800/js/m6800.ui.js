@@ -10,7 +10,7 @@ m6800.ui.init = function(){
 	var html = '<div class="title">m6800 Simulator</div>';
 	html = html + '<div class="body">This simulation imitates the instruction set of Motorola\'s flagship m6800 microprocessor.  ';
 	html = html + 'Instructions may be entered into memory by clicking the opcodes listed at right.  ';
-	html = html + 'You may also be interested in the <a href="http://lab46.corning-cc.edu/~mcooper6/doku.php?id=m6800">Wiki</a>.</div>';
+	html = html + 'You may also be interested in the <a href="https://mypluribus.github.io/2017/12/22/m6800.html">Wiki</a>.</div>';
 	jQuery('#text').html(html);
 };
 m6800.ui.modal = function(html, callback){
