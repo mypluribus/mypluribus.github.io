@@ -66,6 +66,26 @@ em {
 	font-size:1.2em;
 }
 
+#wrapper div#content div#col_1 div.note {
+	border : 2px solid #eee; 
+    border-radius: 20px;
+	background: url(../img/notepad.png) no-repeat 10px 10px;
+	background-color: #FFFFA5; 
+	background-size: 56px;
+	padding: 20px;
+	padding-left : 100px;
+	width: 70%;
+	margin-left: 10%;
+}
+
+#wrapper div#content div#col_1 div.note ul {}
+
+#wrapper div#content div#col_1 div.note li {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+
 /*
 	##
 	## recent and older post excerpts on homepage
