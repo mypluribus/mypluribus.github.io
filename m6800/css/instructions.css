@@ -1,0 +1,92 @@
+#instructions {
+	position : absolute;
+	right : 0px;
+	top : 20px;
+	border : 1px solid #c7c7c7;
+	width : 500px;
+	height : 92%;
+	overflow : scroll;
+	padding : 5px;
+}
+#instructions div.title{
+	position : fixed;
+	top : 0px;
+}
+table{
+	border : 0px solid #eee;
+	width : 100%;
+	color : black;
+	text-align : center;
+}
+table td{
+	font-size : 9pt;
+	padding : 3px;
+	border : 1px solid #c7c7c7;
+}
+table td.op{
+	text-align : left;
+}
+table td.span_all{
+	background : #eee;
+	text-align : center;
+}
+table th { 
+	font-size : 9pt;
+	height: 30px;
+	vertical-align: bottom; 
+	background : #eee;
+	border : 1px solid #c7c7c7;
+}
+table th#title {
+	background : white;
+	vertical-align: middle;
+	border : 0px;
+}
+table th#empty {
+	background : white;
+}
+
+/*
+ * column groups
+ */
+.op{}
+.logic{}
+.imm{
+	background : #62c6f0;
+}
+.rel{
+	background : #f1ee14;
+}.dir{
+	background : #8ee117;
+}
+.inx{
+	background : #ffae63;
+}
+.ext{
+	background : #ff809e;
+}
+.inh{
+	background : #cca9e7;
+/*	background : #c378ff;*/
+}
+.h{
+	background : #e7a9e8;
+}
+.i{
+	background : #ffe3d6;
+}
+.n{
+	background : #c6ceff;
+}
+.z{
+	background : #a9e8d8;
+}
+.v{
+	background : #e0ffb9;
+}
+.c{
+	background : #ffadd7;
+}
+a:link, a:visited, a:active, a:hover{
+	color : black;
+}

@@ -1,0 +1,246 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="./css/m6800.css">
+	<link rel="stylesheet" type="text/css" href="./css/instructions.css">
+	<link rel="stylesheet" type="text/css" href="./css/memory.css">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/m6800.js"></script>
+	<script type="text/javascript" src="./js/m6800.ui.js"></script>
+	<script type="text/javascript" src="./js/m6800.util.js"></script>
+	<script type="text/javascript" src="./js/m6800.instr.js"></script>
+	<script type="text/javascript" src="./js/m6800.instr.al.js"></script>
+	<script type="text/javascript" src="./js/m6800.instr.sp.js"></script>
+	<script type="text/javascript" src="./js/m6800.instr.jmp.js"></script>
+	<script type="text/javascript" src="./js/m6800.instr.ccr.js"></script>
+	<script type="text/javascript" src="./js/memory.js"></script>
+	<script type="text/javascript" src="./js/m6800.obj.js"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-1715258-7");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</head>
+<body onload="m6800.init()">
+<div id="text"></div>
+<div id="instructions">
+	<div class="title">Instruction Set</div>
+</div>
+<div id="m6800">
+	<div class="title">MC6800</div>
+	<div id="processor_control">
+		<div class="title">Processor Control</div>
+		<div id="processor_control_input">
+			<div id="DBE">
+				<span class="label">DBE</span>
+				<span id="value">0</span>
+			</div>
+			<div id="TSC">
+				<span class="label">TSC</span>
+				<span id="value">0</span>			
+			</div>
+			<div id="Halt">
+				<span class="label">Halt</span>
+				<span id="value">0</span>			
+			</div>
+			<div id="NMI">
+				<span class="label">NMI</span>
+				<span id="value">0</span>			
+			</div>
+		</div>
+		<div id="processor_control_output">
+			<div id="BA">
+				<span class="label">BA</span>
+				<span id="value">0</span>			
+			</div>
+		</div>		
+		<div id="processor_control_io">
+			<div id="reset">
+				<span class="label">Reset</span>
+				<span id="value">0</span>			
+			</div>
+		</div>
+	</div>
+	<div id="bus_control">
+		<div class="title">Bus Control</div>
+		<div id="bus_control_input">
+			<div id="IRQ">
+				<span class="label">IRQ</span>
+				<span id="value">0</span>			
+			</div>
+		</div>
+		<div id="bus_control_output">
+			<div id="R_W">
+				<span class="label">R/W</span>
+				<span id="value">0</span>
+			</div>
+			<div id="VMA">
+				<span class="label">VMA</span>
+				<span id="value">0</span>			
+			</div>
+		</div>
+	</div>
+
+	<div id="address_bus">
+		<div class="title">16 Bit Address Bus</div>
+		<ul id="address_bus_list">
+			<li id="ab_bit1">0</li>			
+			<li id="ab_bit2">0</li>			
+			<li id="ab_bit3">0</li>			
+			<li id="ab_bit4">0</li>			
+			<li id="ab_bit5">0</li>			
+			<li id="ab_bit6">0</li>			
+			<li id="ab_bit7">0</li>			
+			<li id="ab_bit8">0</li>			
+			<li id="ab_bit9">0</li>			
+			<li id="ab_bit10">0</li>			
+			<li id="ab_bit11">0</li>			
+			<li id="ab_bit12">0</li>			
+			<li id="ab_bit13">0</li>			
+			<li id="ab_bit14">0</li>			
+			<li id="ab_bit15">0</li>			
+			<li id="ab_bit16">0</li>
+		</ul>
+	</div>
+	<div id="data_bus">
+		<div class="title">8 Bit Data Bus</div>
+		<ul id="data_bus_list">
+			<li id="db_bit1">0</li>			
+			<li id="db_bit2">0</li>			
+			<li id="db_bit3">0</li>			
+			<li id="db_bit4">0</li>			
+			<li id="db_bit5">0</li>			
+			<li id="db_bit6">0</li>			
+			<li id="db_bit7">0</li>			
+			<li id="db_bit8">0</li>			
+		</ul>
+	</div>
+	<div id="accume_a">
+		<div class="title">8 Bit Accumulator A</div>
+		<ul id="accume_a_list">
+			<li id="aa_bit1">0</li>
+			<li id="aa_bit2">0</li>
+			<li id="aa_bit3">0</li>
+			<li id="aa_bit4">0</li>
+			<li id="aa_bit5">0</li>
+			<li id="aa_bit6">0</li>
+			<li id="aa_bit7">0</li>
+			<li id="aa_bit8">0</li>
+		</ul>		
+	</div>
+	<div id="accume_b">
+		<div class="title">8 Bit Accumulator B</div>
+		<ul id="accume_b_list">
+			<li id="ab_bit1">0</li>
+			<li id="ab_bit2">0</li>
+			<li id="ab_bit3">0</li>
+			<li id="ab_bit4">0</li>
+			<li id="ab_bit5">0</li>
+			<li id="ab_bit6">0</li>
+			<li id="ab_bit7">0</li>
+			<li id="ab_bit8">0</li>
+		</ul>		
+	</div>
+	<div id="index_register">
+		<div class="title">16 Bit Index Register</div>
+		<ul id="index_register_list">
+			<li id="ir_bit1">0</li>			
+			<li id="ir_bit2">0</li>			
+			<li id="ir_bit3">0</li>			
+			<li id="ir_bit4">0</li>			
+			<li id="ir_bit5">0</li>			
+			<li id="ir_bit6">0</li>			
+			<li id="ir_bit7">0</li>			
+			<li id="ir_bit8">0</li>			
+			<li id="ir_bit9">0</li>			
+			<li id="ir_bit10">0</li>			
+			<li id="ir_bit11">0</li>			
+			<li id="ir_bit12">0</li>			
+			<li id="ir_bit13">0</li>			
+			<li id="ir_bit14">0</li>			
+			<li id="ir_bit15">0</li>			
+			<li id="ir_bit16">0</li>
+		</ul>
+	</div>	
+	<div id="stack_pointer">
+		<div class="title">16 Bit Stack Pointer</div>
+		<ul id="stack_pointer_list">
+			<li id="sp_bit1">0</li>			
+			<li id="sp_bit2">0</li>			
+			<li id="sp_bit3">0</li>			
+			<li id="sp_bit4">0</li>			
+			<li id="sp_bit5">0</li>			
+			<li id="sp_bit6">0</li>			
+			<li id="sp_bit7">0</li>			
+			<li id="sp_bit8">0</li>			
+			<li id="sp_bit9">0</li>			
+			<li id="sp_bit10">0</li>			
+			<li id="sp_bit11">0</li>			
+			<li id="sp_bit12">0</li>			
+			<li id="sp_bit13">0</li>			
+			<li id="sp_bit14">0</li>			
+			<li id="sp_bit15">0</li>			
+			<li id="sp_bit16">0</li>
+		</ul>
+	</div>	
+	<div id="program_counter">
+		<div class="title">16 Bit Program Counter</div>
+		<ul id="program_counter_list">
+			<li id="pc_bit1">0</li>			
+			<li id="pc_bit2">0</li>			
+			<li id="pc_bit3">0</li>			
+			<li id="pc_bit4">0</li>			
+			<li id="pc_bit5">0</li>			
+			<li id="pc_bit6">0</li>			
+			<li id="pc_bit7">0</li>			
+			<li id="pc_bit8">0</li>			
+			<li id="pc_bit9">0</li>			
+			<li id="pc_bit10">0</li>			
+			<li id="pc_bit11">0</li>			
+			<li id="pc_bit12">0</li>			
+			<li id="pc_bit13">0</li>			
+			<li id="pc_bit14">0</li>			
+			<li id="pc_bit15">0</li>			
+			<li id="pc_bit16">0</li>
+		</ul>
+	</div>
+	<div id="flags">
+		<div class="title">Flags</div>
+		<div id="H">
+			<span class="name">H</span>
+			<span id="value">0</span>
+		</div>
+		<div id="I">
+			<span class="name">I</span>
+			<span id="value">0</span>
+		</div>
+		<div id="N">
+			<span class="name">N</span>
+			<span id="value">0</span>
+		</div>
+		<div id="Z">
+			<span class="name">Z</span>
+			<span id="value">0</span>
+		</div>
+		<div id="V">
+			<span class="name">V</span>
+			<span id="value">0</span>
+		</div>
+		<div id="C">
+			<span class="name">C</span>
+			<span id="value">0</span>
+		</div>
+
+	</div>
+	<div id="five_v">+5v</div>
+	<div id="ground">GRND</div>
+	<div id="o_one">01</div>
+	<div id="o_two">02</div>
+</div>
+<div id="memory"></div>
+</body>
+</html>

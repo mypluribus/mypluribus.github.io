@@ -1,0 +1,37 @@
+#memory {
+	position : absolute;
+	left : 520px;
+	top : 20px;
+/*	height : 345px;*/
+	height : 92%;
+	overflow : scroll;
+	width : 200px;
+	padding : 5px;
+	border : 1px solid #c7c7c7;
+}
+#memory div.title{
+	position : fixed;
+	top : 0px;
+}
+#memory table#memory_list th{
+	border : 0px;
+	background : white;
+}
+#memory table#memory_list {
+	width : 100%;
+}
+#memory table#memory_list td.name {
+	padding : 4px;
+}
+#memory table#memory_list td.value {}
+
+/*
+ * colgroups
+ */
+ 
+ .addr{
+ 	background : #ebeeff;
+ }
+ .contents{
+	background : #f0fddf;
+ }
